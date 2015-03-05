@@ -7,8 +7,16 @@ public class PlayerScript : MonoBehaviour {
 	public float speed = 1.0f;
 	public Material testMaterial;
 	public Material testMaterial2;
+	public GameObject gameOverHUD;
 
 	private float wetness = 0.0f;
+	private bool dead = false;
+
+	public bool IsAlive {
+		get { return !dead;}
+		set { dead = !value; }
+	}
+
 
 	// Use this for initialization
 	void Start () {
@@ -16,24 +24,26 @@ public class PlayerScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		gameObject.transform.position = new Vector3 (gameObject.transform.position.x + speed * Time.deltaTime, gameObject.transform.position.y, gameObject.transform.position.z);
+		if (!dead) {
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			umbrellaUp = !umbrellaUp;
-			if (umbrellaUp)
-				(gameObject.GetComponent<MeshRenderer>() as MeshRenderer).material = testMaterial;
-			else
-				(gameObject.GetComponent<MeshRenderer>() as MeshRenderer).material = testMaterial2;
+			gameObject.transform.position = new Vector3 (gameObject.transform.position.x + speed * Time.deltaTime, gameObject.transform.position.y, gameObject.transform.position.z);
+
+			if (Input.GetKeyDown (KeyCode.Space)) {
+				umbrellaUp = !umbrellaUp;
+				if (umbrellaUp)
+					(gameObject.GetComponent<MeshRenderer> () as MeshRenderer).material = testMaterial;
+				else
+					(gameObject.GetComponent<MeshRenderer> () as MeshRenderer).material = testMaterial2;
+			}
+
+
+			if (!umbrellaUp)
+				wetness += Time.deltaTime;
+
+			Debug.Log (wetness);
+
+			Camera.main.transform.position = new Vector3 (transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
 		}
-
-
-		if (!umbrellaUp)
-			wetness += Time.deltaTime;
-
-		Debug.Log (wetness);
-
-		Camera.main.transform.position = new Vector3(transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
-
 	}
 
 	//This function is called when a collision is occuring with the player. 
@@ -44,8 +54,10 @@ public class PlayerScript : MonoBehaviour {
 		if (umbrellaUp != a_umbrellaShouldBeUp) {
 			if (a_fatal)
 			{
-				Debug.Log ("Died");
-				wetness = 999.0f;
+				dead = true;
+				if (gameOverHUD != null)
+					Instantiate (gameOverHUD);
+				
 			}
 			else
 			{

@@ -16,7 +16,7 @@ public class LightningObstical : MonoBehaviour {
 	void Update () 
 	{
 		lifeTime -= Time.deltaTime;
-		if (lifeTime < 0) {
+		if (lifeTime < 0 && GameObject.FindGameObjectWithTag("Player") != null) {
 			GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>().CheckCollision(false, true);
 			DestroyObject(this.gameObject);
 		}
