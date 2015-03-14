@@ -20,7 +20,7 @@ public class CarObstical : MonoBehaviour {
 		if (player == null)
 			player = GameObject.FindGameObjectWithTag("Player");
 
-		if (Mathf.Abs (player.transform.position.x - gameObject.transform.position.x) < 0.5f && !splashed) {
+		if (!splashed && Mathf.Abs (player.transform.position.x - gameObject.transform.position.x) < 0.5f) {
 			splashed = true;
 			player.GetComponent<PlayerScript>().CheckCollision(false, false);
 		}

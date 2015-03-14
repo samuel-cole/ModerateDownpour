@@ -18,7 +18,6 @@ public class BackgroundSpawn : MonoBehaviour {
 	private float groundSpawnTimeCurrent;
 	
 	private GameObject player;
-	private uint buildingsPassed = 0;
 
 
 	// Use this for initialization
@@ -38,7 +37,6 @@ public class BackgroundSpawn : MonoBehaviour {
 			groundSpawnTimeCurrent -= Time.deltaTime;
 
 			if (spawnTimeCurrent <= 0) {
-				++buildingsPassed;
 				spawnTimeCurrent = spawnTime;
 				GameObject newBuilding = (GameObject)Instantiate (buildingPrefab);
 				newBuilding.transform.position = new Vector3 (player.transform.position.x + spawnDistanceFromPlayer, player.transform.position.y + newBuilding.transform.localScale.y / 2 - player.transform.localScale.y, 20.0f);

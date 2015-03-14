@@ -5,6 +5,8 @@ public class PlayerScript : MonoBehaviour {
 
 	public bool umbrellaUp = true;
 	public float speed = 1.0f;
+	public float wetnessThreshold = 100.0f;
+	public uint housesPassed = 0;
 	public Material testMaterial;
 	public Material testMaterial2;
 	public GameObject gameOverHUD;
@@ -25,6 +27,7 @@ public class PlayerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!dead) {
+			Debug.Log (housesPassed);
 
 			gameObject.transform.position = new Vector3 (gameObject.transform.position.x + speed * Time.deltaTime, gameObject.transform.position.y, gameObject.transform.position.z);
 
@@ -38,7 +41,13 @@ public class PlayerScript : MonoBehaviour {
 
 
 			if (!umbrellaUp)
+			{
 				wetness += Time.deltaTime;
+				if (wetness >= wetnessThreshold)
+				{
+					Die();
+				}
+			}
 
 			Debug.Log (wetness);
 
@@ -53,16 +62,19 @@ public class PlayerScript : MonoBehaviour {
 	{
 		if (umbrellaUp != a_umbrellaShouldBeUp) {
 			if (a_fatal)
-			{
-				dead = true;
-				if (gameOverHUD != null)
-					Instantiate (gameOverHUD);
-				
-			}
-			else
-			{
+				Die();
+			else {
 				wetness += 10.0f;
+				if (wetness >= wetnessThreshold)
+					Die();
 			}
 		}
+	}
+
+	private void Die ()
+	{
+		dead = true;
+		if (gameOverHUD != null)
+			Instantiate (gameOverHUD);
 	}
 }
