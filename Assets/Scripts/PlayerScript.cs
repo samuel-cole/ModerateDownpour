@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerScript : MonoBehaviour {
@@ -74,7 +75,9 @@ public class PlayerScript : MonoBehaviour {
 	private void Die ()
 	{
 		dead = true;
-		if (gameOverHUD != null)
-			Instantiate (gameOverHUD);
+		if (gameOverHUD != null) {
+			GameObject gameOver = (GameObject)Instantiate (gameOverHUD);
+			gameOver.transform.FindChild("HousesPassed").gameObject.GetComponent<Text>().text = "Houses Passed: " + housesPassed;
+		}
 	}
 }
