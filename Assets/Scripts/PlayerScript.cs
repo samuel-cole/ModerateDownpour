@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour {
 	public GameObject gameOverHUD;
 
 	private float wetness = 0.0f;
+	private CanvasGroup wetOverlay;
 	private bool dead = false;
 
 	public bool IsAlive {
@@ -23,12 +24,13 @@ public class PlayerScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		wetOverlay = GameObject.FindGameObjectWithTag ("WetOverlay").GetComponent<CanvasGroup>();
 	}
 
 	// Update is called once per frame
 	void Update () {
 		if (!dead) {
-			Debug.Log (housesPassed);
+
 
 			gameObject.transform.position = new Vector3 (gameObject.transform.position.x + speed * Time.deltaTime, gameObject.transform.position.y, gameObject.transform.position.z);
 
@@ -44,12 +46,14 @@ public class PlayerScript : MonoBehaviour {
 			if (!umbrellaUp)
 			{
 				wetness += Time.deltaTime;
+				wetOverlay.alpha = wetness/wetnessThreshold;
 				if (wetness >= wetnessThreshold)
 				{
 					Die();
 				}
 			}
 
+			Debug.Log (housesPassed);
 			Debug.Log (wetness);
 
 			Camera.main.transform.position = new Vector3 (transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
@@ -66,6 +70,7 @@ public class PlayerScript : MonoBehaviour {
 				Die();
 			else {
 				wetness += 10.0f;
+				wetOverlay.alpha = wetness/wetnessThreshold;
 				if (wetness >= wetnessThreshold)
 					Die();
 			}
