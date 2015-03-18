@@ -48,7 +48,7 @@ public class ObsticalManager : MonoBehaviour
 			break;
 		case 2:
 			GameObject newCar = (GameObject)Instantiate (car);
-			newCar.transform.position = new Vector3(player.transform.position.x - 50, player.transform.position.y, player.transform.position.z + 1);
+			newCar.transform.position = new Vector3(player.transform.position.x + 50, player.transform.position.y - 1, player.transform.position.z - 5);
 			break;
 		default:
 			Debug.Log("Invalid Obstical Number!");

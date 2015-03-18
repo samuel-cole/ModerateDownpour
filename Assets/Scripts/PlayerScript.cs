@@ -80,6 +80,8 @@ public class PlayerScript : MonoBehaviour {
 	private void Die ()
 	{
 		dead = true;
+		wetness = wetnessThreshold;
+		wetOverlay.alpha = 1.0f;
 		if (gameOverHUD != null) {
 			GameObject gameOver = (GameObject)Instantiate (gameOverHUD);
 			gameOver.transform.FindChild("HousesPassed").gameObject.GetComponent<Text>().text = "Houses Passed: " + housesPassed;

@@ -15,7 +15,7 @@ public class CarObstical : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = new Vector3 (transform.position.x + speed, transform.position.y, transform.position.z);
+		transform.position = new Vector3 (transform.position.x - speed, transform.position.y, transform.position.z);
 
 		if (player == null)
 			player = GameObject.FindGameObjectWithTag("Player");
@@ -25,7 +25,7 @@ public class CarObstical : MonoBehaviour {
 			player.GetComponent<PlayerScript>().CheckCollision(false, false);
 		}
 
-		if (transform.position.x > player.transform.position.x + deleteDistance)
+		if (transform.position.x < player.transform.position.x - deleteDistance)
 			DestroyObject (gameObject);
 	}
 }

@@ -5,8 +5,8 @@ public class BuildingScript : MonoBehaviour {
 
 	private GameObject player;
 	public float deleteDistance;
-
-	private bool passed = false;
+	//Set this to true for objects that shouldn't count towards the houses passed count.
+	public bool passed = false;
 
 	// Use this for initialization
 	void Start () {
