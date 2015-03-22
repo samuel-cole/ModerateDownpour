@@ -7,6 +7,7 @@ public class ObsticalManager : MonoBehaviour
 	private float m_obsticalCooldown;
 	public GameObject lightning;
 	public GameObject car;
+	public GameObject frontObstical;
 	private GameObject player;
 	private int obsticalNumber;
 
@@ -29,11 +30,11 @@ public class ObsticalManager : MonoBehaviour
 		if (m_obsticalCooldown <= 0) 
 		{
 			//With ints, it seems as though Random.Range() includes the first number, but excludes the second, hence the second number here seeming higher than it should be.
-			obsticalNumber = Random.Range (1, 3);
+			obsticalNumber = Random.Range (1, 4);
 
 			AddObstical(obsticalNumber);
 
-			m_obsticalCooldown = Random.Range (5, 15);
+			m_obsticalCooldown = Random.Range (3, 10);
 		}			
 	}
 
@@ -48,7 +49,12 @@ public class ObsticalManager : MonoBehaviour
 			break;
 		case 2:
 			GameObject newCar = (GameObject)Instantiate (car);
-			newCar.transform.position = new Vector3(player.transform.position.x + 50, player.transform.position.y - 1, player.transform.position.z - 5);
+			newCar.transform.position = new Vector3(player.transform.position.x + 50, 0, player.transform.position.z - 5);
+			break;
+		case 3:
+			GameObject newFrontObstical = (GameObject)Instantiate (frontObstical);
+			frontObstical.transform.position = new Vector3(player.transform.position.x + 50, 1, player.transform.position.z);
+			Debug.Log("Front Obstical Created!");
 			break;
 		default:
 			Debug.Log("Invalid Obstical Number!");

@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\BackgroundSpawn.cs" />
      <Compile Include="Assets\Scripts\BuildingScript.cs" />
      <Compile Include="Assets\Scripts\CarObstical.cs" />
+     <Compile Include="Assets\Scripts\FrontObstical.cs" />
      <Compile Include="Assets\Scripts\LightningObstical.cs" />
      <Compile Include="Assets\Scripts\MenuScript.cs" />
      <Compile Include="Assets\Scripts\ObsticalManager.cs" />

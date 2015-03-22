@@ -12,9 +12,10 @@ public class PlayerScript : MonoBehaviour {
 	public Material testMaterial2;
 	public GameObject gameOverHUD;
 
+	private bool dead = false;
 	private float wetness = 0.0f;
 	private CanvasGroup wetOverlay;
-	private bool dead = false;
+	private Animator animator;
 
 	public bool IsAlive {
 		get { return !dead;}
@@ -25,6 +26,7 @@ public class PlayerScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		wetOverlay = GameObject.FindGameObjectWithTag ("WetOverlay").GetComponent<CanvasGroup>();
+		animator = GetComponentInChildren<Animator> ();
 	}
 
 	// Update is called once per frame
@@ -36,10 +38,12 @@ public class PlayerScript : MonoBehaviour {
 
 			if (Input.GetKeyDown (KeyCode.Space)) {
 				umbrellaUp = !umbrellaUp;
-				if (umbrellaUp)
-					(gameObject.GetComponent<MeshRenderer> () as MeshRenderer).material = testMaterial;
-				else
-					(gameObject.GetComponent<MeshRenderer> () as MeshRenderer).material = testMaterial2;
+				animator.SetBool ("UmbrellaUp", umbrellaUp);
+
+				//if (umbrellaUp)
+				//	(gameObject.GetComponent<MeshRenderer> () as MeshRenderer).material = testMaterial;
+				//else
+				//	(gameObject.GetComponent<MeshRenderer> () as MeshRenderer).material = testMaterial2;
 			}
 
 
@@ -52,9 +56,6 @@ public class PlayerScript : MonoBehaviour {
 					Die();
 				}
 			}
-
-			Debug.Log (housesPassed);
-			Debug.Log (wetness);
 
 			Camera.main.transform.position = new Vector3 (transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
 		}

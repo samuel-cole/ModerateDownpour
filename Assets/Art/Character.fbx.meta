@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 74a0332949604124b8c10431c2565abe
-timeCreated: 1426658962
+timeCreated: 1426984177
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -76,10 +76,8 @@ ModelImporter:
     4300000: umbrella
     4300002: Character
     7400000: Walking
-    7400002: LowerUmbrella
-    7400004: WalkingUmbrellaDown
+    7400002: WalkingUmbrellaDown
     9500000: //RootNode
-    11100000: //RootNode
     13700000: Character
   materials:
     importMaterials: 1
@@ -90,7 +88,7 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
@@ -100,107 +98,15 @@ ModelImporter:
     - serializedVersion: 16
       name: Walking
       takeName: Take 001
-      firstFrame: 1
-      lastFrame: 30
+      firstFrame: 10
+      lastFrame: 31
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
-      cycleOffset: 0
+      cycleOffset: 3
       loop: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: geometry
-        weight: 1
-      - path: geometry/Character
-        weight: 1
-      - path: root
-        weight: 1
-      - path: root/Character_Joints
-        weight: 1
-      - path: root/Character_Joints/L_Leg
-        weight: 1
-      - path: root/Character_Joints/L_Leg/L_Knee
-        weight: 1
-      - path: root/Character_Joints/L_Leg/L_Knee/L_Ankle
-        weight: 1
-      - path: root/Character_Joints/L_Leg/L_Knee/L_Ankle/L_Toe
-        weight: 1
-      - path: root/Character_Joints/R_leg
-        weight: 1
-      - path: root/Character_Joints/R_leg/R_Knee
-        weight: 1
-      - path: root/Character_Joints/R_leg/R_Knee/R_Ankle
-        weight: 1
-      - path: root/Character_Joints/R_leg/R_Knee/R_Ankle/R_Toe
-        weight: 1
-      - path: root/Character_Joints/Torso1
-        weight: 1
-      - path: root/Character_Joints/Torso1/Torso2
-        weight: 1
-      - path: root/Character_Joints/Torso1/Torso2/Head
-        weight: 1
-      - path: root/Character_Joints/Torso1/Torso2/L_Shoulder
-        weight: 1
-      - path: root/Character_Joints/Torso1/Torso2/L_Shoulder/L_Elbow
-        weight: 1
-      - path: root/Character_Joints/Torso1/Torso2/L_Shoulder/L_Elbow/L_Wrist
-        weight: 1
-      - path: root/Character_Joints/Torso1/Torso2/L_Shoulder/L_Elbow/L_Wrist/L_Hand
-        weight: 1
-      - path: root/Character_Joints/Torso1/Torso2/L_Shoulder/L_Elbow/L_Wrist/L_Hand/L_Fingers
-        weight: 1
-      - path: root/Character_Joints/Torso1/Torso2/L_Shoulder/L_Elbow/L_Wrist/L_Hand/L_Fingers/L_Fingers2
-        weight: 1
-      - path: root/Character_Joints/Torso1/Torso2/L_Shoulder/L_Elbow/L_Wrist/L_Hand/L_Thumb1
-        weight: 1
-      - path: root/Character_Joints/Torso1/Torso2/L_Shoulder/L_Elbow/L_Wrist/L_Hand/L_Thumb1/L_Thumb2
-        weight: 1
-      - path: root/Character_Joints/Torso1/Torso2/R_Shoulder
-        weight: 1
-      - path: root/Character_Joints/Torso1/Torso2/R_Shoulder/R_Elbow
-        weight: 1
-      - path: root/Character_Joints/Torso1/Torso2/R_Shoulder/R_Elbow/R_Wrist
-        weight: 1
-      - path: root/Character_Joints/Torso1/Torso2/R_Shoulder/R_Elbow/R_Wrist/R_Hand
-        weight: 1
-      - path: root/Character_Joints/Torso1/Torso2/R_Shoulder/R_Elbow/R_Wrist/R_Hand/R_Fingers
-        weight: 1
-      - path: root/Character_Joints/Torso1/Torso2/R_Shoulder/R_Elbow/R_Wrist/R_Hand/R_Fingers/R_Fingers2
-        weight: 1
-      - path: root/Character_Joints/Torso1/Torso2/R_Shoulder/R_Elbow/R_Wrist/R_Hand/R_Thumb1
-        weight: 1
-      - path: root/Character_Joints/Torso1/Torso2/R_Shoulder/R_Elbow/R_Wrist/R_Hand/R_Thumb1/R_Thumb2
-        weight: 1
-      - path: root/Character_Joints/Torso1/Torso2/R_Shoulder/R_Elbow/R_Wrist/R_Hand/umbrella
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-    - serializedVersion: 16
-      name: LowerUmbrella
-      takeName: Take 001
-      firstFrame: 31
-      lastFrame: 40
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -284,14 +190,14 @@ ModelImporter:
     - serializedVersion: 16
       name: WalkingUmbrellaDown
       takeName: Take 001
-      firstFrame: 41
+      firstFrame: 40
       lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -408,7 +314,7 @@ ModelImporter:
     armStretch: .0500000007
     legStretch: .0500000007
     feetSpacing: 0
-    rootMotionBoneName: root
+    rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   additionalBone: 0
