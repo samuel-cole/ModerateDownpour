@@ -1,38 +1,33 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class MenuScript : MonoBehaviour {
 
-	public GameObject Manager = null;
+	public GameObject pauseScreen;
 
-	private bool alreadyClicked = false;
-	
-	// Use this for initialization
-	void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	
-	
 	public void OnStart() {
 		Application.LoadLevel ("Game");
 	}
 
-	public void OnStart2() {
-		if (Manager != null && !alreadyClicked) {
-			if (GameObject.FindGameObjectWithTag("Player") != null)
-				DestroyObject(GameObject.FindGameObjectWithTag("Player"));
-			if (GameObject.FindGameObjectWithTag ("Manager") != null)
-				DestroyObject (GameObject.FindGameObjectWithTag("Manager"));
-			Instantiate (Manager);
-			alreadyClicked = true;
-		}
+	public void OnCredits() {
+		Application.LoadLevel ("Credits");
 	}
-	
+
+	public void OnMenu() {
+		Application.LoadLevel ("Menu");
+	}
+
 	public void OnQuit() {
 		Application.Quit ();
+	}
+
+	public void OnPause() {
+		Time.timeScale = 0.0f;
+		Instantiate (pauseScreen);
+	}
+
+	public void OnResume() {
+		Time.timeScale = 1.0f;
+		Destroy (gameObject);
 	}
 }

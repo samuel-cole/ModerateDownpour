@@ -57,7 +57,7 @@ public class PlayerScript : MonoBehaviour {
 				}
 			}
 
-			Camera.main.transform.position = new Vector3 (transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
+			Camera.main.transform.position = new Vector3 (transform.position.x + 2, Camera.main.transform.position.y, Camera.main.transform.position.z);
 		}
 	}
 
