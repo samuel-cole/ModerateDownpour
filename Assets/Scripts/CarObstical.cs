@@ -17,8 +17,10 @@ public class CarObstical : MonoBehaviour {
 	void Update () {
 		transform.position = new Vector3 (transform.position.x - speed, transform.position.y, transform.position.z);
 
-		if (player == null)
-			player = GameObject.FindGameObjectWithTag("Player");
+		if (player == null) {
+			player = GameObject.FindGameObjectWithTag ("Player");
+			player.transform.FindChild ("CarSound").GetComponent<AudioSource>().Play ();
+		}
 
 		if (!splashed && Mathf.Abs (player.transform.position.x - gameObject.transform.position.x) < 0.5f) {
 			splashed = true;

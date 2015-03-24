@@ -11,6 +11,7 @@ public class BackgroundSpawn : MonoBehaviour {
 	public GameObject closeBackground;
 	public GameObject farBackground;
 	public GameObject footpath;
+	public GameObject lightPost;
 
 	//I should have done all of this with a list of objects, but not enough time to refactor.
 	public float spawnDistanceFromPlayer;
@@ -33,6 +34,10 @@ public class BackgroundSpawn : MonoBehaviour {
 	public  float footpathSpawnTime;
 	private float footpathSpawnTimeCurrent;
 
+	public  float lightPostSpawnDistanceFromPlayer;
+	public  float lightPostSpawnTime;
+	private float lightPostSpawnTimeCurrent;
+
 	//public List<GameObject> prefabs;
 	//public List<Vector3> spawnDistances;
 	//public List<float> spawnTimes;
@@ -49,6 +54,7 @@ public class BackgroundSpawn : MonoBehaviour {
 		groundSpawnTimeCurrent = groundSpawnTime;
 		closeBackgroundSpawnTimeCurrent = closeBackgroundSpawnTime;
 		farBackgroundSpawnTimeCurrent = farBackgroundSpawnTime;
+		lightPostSpawnTimeCurrent = lightPostSpawnTime;
 
 		player = (GameObject)Instantiate (playerPrefab);
 		player.transform.position = new Vector3 (0, 0, 13);
@@ -64,15 +70,15 @@ public class BackgroundSpawn : MonoBehaviour {
 			closeBackgroundSpawnTimeCurrent -= Time.deltaTime;
 			farBackgroundSpawnTimeCurrent -= Time.deltaTime;
 			footpathSpawnTimeCurrent -= Time.deltaTime;
+			lightPostSpawnTimeCurrent -= Time.deltaTime;
 
 			if (spawnTimeCurrent <= 0) {
 
 				spawnTimeCurrent = spawnTime;
-				//if (Random.value > 0.9f)
-				{
-					GameObject newBuilding = (GameObject)Instantiate (buildingPrefab);
-					newBuilding.transform.position = new Vector3 (player.transform.position.x + spawnDistanceFromPlayer, 0, 20.0f);
-				}
+
+				GameObject newBuilding = (GameObject)Instantiate (buildingPrefab);
+				newBuilding.transform.position = new Vector3 (player.transform.position.x + spawnDistanceFromPlayer, 0, 20.0f);
+
 			}
 			if (groundSpawnTimeCurrent <= 0) {
 				groundSpawnTimeCurrent = groundSpawnTime;
@@ -89,11 +95,15 @@ public class BackgroundSpawn : MonoBehaviour {
 				GameObject newBackground = (GameObject)Instantiate (farBackground);
 				newBackground.transform.position = new Vector3 (player.transform.position.x + farBackgroundSpawnDistanceFromPlayer, 12.0f, 50.0f);
 			}
-
 			if (footpathSpawnTimeCurrent <= 0) {
 				footpathSpawnTimeCurrent = footpathSpawnTime;
 				GameObject newFootpath = (GameObject)Instantiate (footpath);
 				newFootpath.transform.position = new Vector3 (player.transform.position.x + footpathSpawnDistanceFromPlayer, 0.0f, 6.0f);
+			}
+			if (lightPostSpawnTimeCurrent <= 0) {
+				lightPostSpawnTimeCurrent = lightPostSpawnTime;
+				GameObject newlightPost = (GameObject)Instantiate (lightPost);
+				newlightPost.transform.position = new Vector3 (player.transform.position.x + lightPostSpawnDistanceFromPlayer, 0.0f, 9.5f);
 			}
 		}
 	}

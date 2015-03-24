@@ -37,10 +37,18 @@ public class FrontObstical : MonoBehaviour {
 		
 		if (player == null)
 			player = GameObject.FindGameObjectWithTag("Player");
+
+		if (!splashed && Mathf.Abs (player.transform.position.x - gameObject.transform.position.x) < 1.5f && player.GetComponent<PlayerScript>().umbrellaUp == false) {
+			splashed = true;
+			player.GetComponent<PlayerScript>().CheckCollision(false, false);
+			player.transform.FindChild ("SplashSound").GetComponent<AudioSource>().Play ();
+			DestroyObject (gameObject);
+		}
 		
 		if (!splashed && Mathf.Abs (player.transform.position.x - gameObject.transform.position.x) < 0.5f) {
 			splashed = true;
 			player.GetComponent<PlayerScript>().CheckCollision(false, false);
+			player.transform.FindChild ("SplashSound").GetComponent<AudioSource>().Play ();
 			DestroyObject (gameObject);
 		}
 		

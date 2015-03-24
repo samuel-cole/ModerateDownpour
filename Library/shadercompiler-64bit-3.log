@@ -1,39 +1,9 @@
 Base path: E:/Program Files/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-3-5564
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-3-4296
 Cmd: getPlatforms
-Cmd: compileSnippet
-  api=1 type=0 insize=9591 outsize=3891 kw=UNITY_COLORSPACE_GAMMA ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=9591 outsize=6 kw=UNITY_COLORSPACE_GAMMA ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=7257 outsize=941 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=7257 outsize=5095 kw=DIRECTIONAL SHADOWS_SCREEN LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF VERTEXLIGHT_ON ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=7257 outsize=3852 kw=DIRECTIONAL SHADOWS_SCREEN SHADOWS_NATIVE LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF ok=1
-Cmd: compileSnippet
-  api=8 type=0 insize=4694 outsize=5672 kw=DIRECTIONAL ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=4694 outsize=725 kw=POINT_COOKIE ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=4694 outsize=3055 kw=DIRECTIONAL_COOKIE ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=4694 outsize=4112 kw=POINT ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=3899 outsize=3898 kw= ok=1
-Cmd: compileSnippet
-  api=8 type=0 insize=6246 outsize=5810 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF UNITY_HDR_ON ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=6246 outsize=6 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF UNITY_HDR_ON ok=1
-Cmd: compileSnippet
-  api=8 type=0 insize=7116 outsize=7232 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=7116 outsize=3592 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=7178 outsize=1481 kw=DIRECTIONAL LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF VERTEXLIGHT_ON ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=4616 outsize=3107 kw=POINT ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=4616 outsize=6 kw=SPOT ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=4616 outsize=4835 kw=SPOT ok=1
+Unhandled exception: Readfile from pipe failed. GLE=The pipe has been ended.
+
+
+Quitting shader compiler process
+
+Crashed!

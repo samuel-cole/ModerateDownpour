@@ -8,8 +8,6 @@ public class PlayerScript : MonoBehaviour {
 	public float speed = 1.0f;
 	public float wetnessThreshold = 100.0f;
 	public uint housesPassed = 0;
-	public Material testMaterial;
-	public Material testMaterial2;
 	public GameObject gameOverHUD;
 
 	private bool dead = false;
@@ -36,14 +34,9 @@ public class PlayerScript : MonoBehaviour {
 
 			gameObject.transform.position = new Vector3 (gameObject.transform.position.x + speed * Time.deltaTime, gameObject.transform.position.y, gameObject.transform.position.z);
 
-			if (Input.GetKeyDown (KeyCode.Space)) {
+			if (Input.GetKeyDown (KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)) {
 				umbrellaUp = !umbrellaUp;
 				animator.SetBool ("UmbrellaUp", umbrellaUp);
-
-				//if (umbrellaUp)
-				//	(gameObject.GetComponent<MeshRenderer> () as MeshRenderer).material = testMaterial;
-				//else
-				//	(gameObject.GetComponent<MeshRenderer> () as MeshRenderer).material = testMaterial2;
 			}
 
 
@@ -80,12 +73,16 @@ public class PlayerScript : MonoBehaviour {
 
 	private void Die ()
 	{
-		dead = true;
-		wetness = wetnessThreshold;
-		wetOverlay.alpha = 1.0f;
-		if (gameOverHUD != null) {
-			GameObject gameOver = (GameObject)Instantiate (gameOverHUD);
-			gameOver.transform.FindChild("HousesPassed").gameObject.GetComponent<Text>().text = "Houses Passed: " + housesPassed;
+		if (!dead) {
+			dead = true;
+			wetness = wetnessThreshold;
+			wetOverlay.alpha = 1.0f;
+			if (gameOverHUD != null) {
+				GameObject gameOver = (GameObject)Instantiate (gameOverHUD);
+				transform.FindChild ("DeadMusicSound").GetComponent<AudioSource> ().Play ();
+				transform.FindChild ("MusicSound").GetComponent<AudioSource> ().Stop ();
+				gameOver.transform.FindChild ("HousesPassed").gameObject.GetComponent<Text> ().text = "Houses Passed: " + housesPassed;
+			}
 		}
 	}
 }

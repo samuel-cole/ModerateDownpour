@@ -7,6 +7,7 @@ public class ObsticalManager : MonoBehaviour
 	private float m_obsticalCooldown;
 	public GameObject lightning;
 	public GameObject car;
+	public GameObject car2;
 	public GameObject frontObstical;
 	private GameObject player;
 	private int obsticalNumber;
@@ -48,8 +49,15 @@ public class ObsticalManager : MonoBehaviour
 			newLightning.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z);
 			break;
 		case 2:
-			GameObject newCar = (GameObject)Instantiate (car);
-			newCar.transform.position = new Vector3(player.transform.position.x + 50, 1, 8);
+			if (Random.value < 0.5f)
+			{
+				GameObject newCar = (GameObject)Instantiate (car);
+				newCar.transform.position = new Vector3(player.transform.position.x + 50, 0, 7);
+			} else {
+				GameObject newCar = (GameObject)Instantiate (car2);
+				newCar.transform.localScale = new Vector3(0.9f, 0.9f, 0.9f);
+				newCar.transform.position = new Vector3(player.transform.position.x + 50, -2.7f, 12);
+			}
 			break;
 		case 3:
 			GameObject newFrontObstical = (GameObject)Instantiate (frontObstical);

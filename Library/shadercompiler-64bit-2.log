@@ -1,37 +1,9 @@
 Base path: E:/Program Files/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-2-5416
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-2-4272
 Cmd: getPlatforms
-Cmd: compileSnippet
-  api=0 type=1 insize=9591 outsize=6 kw= ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=7257 outsize=4619 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF VERTEXLIGHT_ON ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=7257 outsize=6 kw=DIRECTIONAL SHADOWS_SCREEN LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=4694 outsize=3939 kw=POINT ok=1
-Cmd: compileSnippet
-  api=8 type=0 insize=4694 outsize=5672 kw=SPOT ok=1
-Cmd: compileSnippet
-  api=1 type=0 insize=4694 outsize=725 kw=DIRECTIONAL_COOKIE ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=4694 outsize=6 kw=POINT ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=4694 outsize=901 kw=SPOT ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=4694 outsize=4420 kw=POINT_COOKIE ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=3899 outsize=2283 kw= ok=1
-Cmd: compileSnippet
-  api=8 type=0 insize=6246 outsize=5810 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
-Cmd: compileSnippet
-  api=1 type=1 insize=6246 outsize=212 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF UNITY_HDR_ON ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=7116 outsize=4051 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=7116 outsize=2322 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF UNITY_HDR_ON ok=1
-Cmd: compileSnippet
-  api=8 type=0 insize=7178 outsize=7069 kw=DIRECTIONAL LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=4616 outsize=2776 kw=DIRECTIONAL ok=1
-Cmd: compileSnippet
-  api=8 type=1 insize=4616 outsize=2950 kw=DIRECTIONAL ok=1
+Unhandled exception: Readfile from pipe failed. GLE=The pipe has been ended.
+
+
+Quitting shader compiler process
+
+Crashed!

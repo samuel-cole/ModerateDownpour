@@ -11,13 +11,14 @@ public class BuildingScript : MonoBehaviour {
 	public bool generateBuilding = false;
 
 	public GameObject fence;
-	public GameObject building;
+	public GameObject building1;
 	public GameObject window1;
 	public GameObject window2;
 	public GameObject door1;
 	public GameObject door2;
 	public GameObject steps1;
 	public GameObject steps2;
+	public GameObject kennel;
 
 	// Use this for initialization
 	void Start () {
@@ -27,12 +28,25 @@ public class BuildingScript : MonoBehaviour {
 				GameObject newFence = Instantiate (fence);
 				newFence.transform.position = transform.position;
 				newFence.transform.parent = gameObject.transform;
+				if (Random.value < 0.1f) {
+					GameObject newKennel = Instantiate (kennel);
+					if (Random.value < 0.5f) {
+						newKennel.transform.position = transform.position + new Vector3(Random.value * 5.0f - 2.5f, 0.0f, -1.0f);
+						newKennel.transform.Rotate(0, 180, 0);
+					}
+					else {
+						newKennel.transform.position = transform.position + new Vector3(Random.value * 5.0f - 2.5f, 0.0f, 1.0f);
+					}
+					newKennel.transform.parent = gameObject.transform;
+				}
 			}
 			else {
-				//Generate building.
-				GameObject newBuilding = Instantiate (building);
+				//Building.
+				GameObject newBuilding;
+				newBuilding = Instantiate (building1);
 				newBuilding.transform.localScale = new Vector3(1.0f, 0.8f, 1.0f);
 				newBuilding.transform.position = transform.position;
+
 
 				//Door
 				GameObject newDoor;
@@ -40,14 +54,14 @@ public class BuildingScript : MonoBehaviour {
 					newDoor = Instantiate (door1);
 					newDoor.transform.position = transform.position + new Vector3(0.0f, 2.2f, -5.0f);
 					newDoor.transform.localScale = new Vector3(1.0f, 0.8f, 1.0f);
-				}
-				else {
+				} else {
 					newDoor = Instantiate (door2);
 					newDoor.transform.position = transform.position + new Vector3(-0.02f, 0.15f, -5.0f);
 					newDoor.transform.localScale = new Vector3(0.89f, 0.8f, 1.0f);
 				}
 
 				newDoor.transform.Rotate(new Vector3(0.0f, 180.0f, 0.0f));
+
 
 				//Steps
 				GameObject newSteps;

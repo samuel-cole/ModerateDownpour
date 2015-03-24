@@ -12,37 +12,8 @@ Platform assembly: E:\My Documents\ModerateDownpour\Release\ModerateDownpour_Dat
 Loading E:\My Documents\ModerateDownpour\Release\ModerateDownpour_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: E:\My Documents\ModerateDownpour\Release\ModerateDownpour_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading E:\My Documents\ModerateDownpour\Release\ModerateDownpour_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.031 seconds
+- Completed reload, in  0.034 seconds
 <RI> Initializing input.
 <RI> Input initialized.
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initialized touch support.
-Platform assembly: E:\My Documents\ModerateDownpour\Release\ModerateDownpour_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: E:\My Documents\ModerateDownpour\Release\ModerateDownpour_Data\Managed\System.dll (this message is harmless)
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.719244 ms
-
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 641.
-Total: 0.215889 ms (FindLiveObjects: 0.022186 ms CreateObjectMapping: 0.019057 ms MarkObjects: 0.172086 ms  DeleteObjects: 0.002275 ms)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.312973 ms
-
-Unloading 318 unused Assets to reduce memory usage. Loaded Objects now: 158.
-Total: 0.395655 ms (FindLiveObjects: 0.019910 ms CreateObjectMapping: 0.022470 ms MarkObjects: 0.099553 ms  DeleteObjects: 0.253435 ms)
-
-Setting up 2 worker threads for Enlighten.
-  Thread -> id: 17b8 -> priority: 1 
-  Thread -> id: 17c0 -> priority: 1 
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.221863 ms
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 161.
-Total: 0.145917 ms (FindLiveObjects: 0.005404 ms CreateObjectMapping: 0.005973 ms MarkObjects: 0.099553 ms  DeleteObjects: 0.034701 ms)
-
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.224707 ms
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 643.
-Total: 0.212192 ms (FindLiveObjects: 0.023039 ms CreateObjectMapping: 0.018488 ms MarkObjects: 0.165828 ms  DeleteObjects: 0.004551 ms)
-
