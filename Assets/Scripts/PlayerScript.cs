@@ -37,12 +37,13 @@ public class PlayerScript : MonoBehaviour {
 			if (Input.GetKeyDown (KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space)) {
 				umbrellaUp = !umbrellaUp;
 				animator.SetBool ("UmbrellaUp", umbrellaUp);
+				transform.FindChild("UmbrellaSound").GetComponent<AudioSource>().Play ();
 			}
 
 
 			if (!umbrellaUp)
 			{
-				wetness += Time.deltaTime;
+				wetness += Time.deltaTime * 3;
 				wetOverlay.alpha = wetness/wetnessThreshold;
 				if (wetness >= wetnessThreshold)
 				{
